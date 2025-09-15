@@ -1,14 +1,9 @@
 import Link from "next/link";
-import NavButton from "../buttons/nav-button";
+import NavButton, { NavButtonProps } from "../buttons/nav-button";
 
-export type linkProps = {
-    name: string,
-    href: string
+type navContainerProps = {
+    links: NavButtonProps[]
 };
-
-interface navContainerProps{
-    links: linkProps[];
-}
 
 export default function NavContainer(
     { links }: navContainerProps

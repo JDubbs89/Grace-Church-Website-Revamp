@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-type NavButtonProps = {
+export type NavButtonProps = {
     name: string;
     href: string;
 }
