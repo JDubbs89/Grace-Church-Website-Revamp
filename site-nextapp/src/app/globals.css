@@ -25,7 +25,7 @@
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-2 rounded-2xl text-white text-2xl transition-all duration-200;
+  @apply mx-auto my-auto px-3 py-0.5 rounded-2xl border-[#ffffff00] border-2 text-white text-2xl font-light transition-all duration-200;
 }
 
 .nav-button:hover {
@@ -33,7 +33,7 @@
 }
 
 .nav-button-active {
-  @apply border-1;
+  @apply border-[#ffffff49];
 }
 
 @media (prefers-color-scheme: light) {
