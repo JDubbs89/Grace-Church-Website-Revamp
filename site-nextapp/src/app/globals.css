@@ -12,7 +12,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+.site-header {
+  @apply top-0 right-0 left-0 absolute flex flex-row bg-[#0a578a];
+}
+
+.header-logo {
+  @apply my-8 mx-auto;
+}
+
+.header-nav-container {
+  @apply my-5 mx-auto flex flex-row justify-between gap-2;
+}
+
+.nav-button {
+  @apply mx-auto my-auto px-2 rounded-2xl text-white text-2xl transition-all duration-200;
+}
+
+.nav-button:hover {
+  @apply bg-linear-0 bg-[#094c7988];
+}
+
+.nav-button-active {
+  @apply border-1;
+}
+
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -20,7 +44,6 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  @apply bg-[var(--background)] text-[var(--foreground)];
   font-family: Arial, Helvetica, sans-serif;
 }
