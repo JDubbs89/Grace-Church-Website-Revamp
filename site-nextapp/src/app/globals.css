@@ -15,23 +15,58 @@
 /* Generic Paragraph, Heading, Button and Info Styles, Mobile Media Query (?) */
 
 .heading {
-  @apply text-7xl mb-4 mx-auto text-center text-shadow-lg w-min whitespace-nowrap;
+  @apply text-6xl mb-4 mx-auto text-center font-light text-shadow-lg w-min whitespace-nowrap;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.article-heading {
+  @apply text-5xl mb-4 mx-auto font-light text-center w-min whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .paragraph {
-  @apply p-2 whitespace-pre-wrap text-left text-3xl;
+  @apply font-light p-2 whitespace-pre-wrap text-left text-2xl;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .basic-button {
-  @apply rounded-sm px-4 py-2 font-normal;
+  @apply rounded-full px-4 py-2 font-light text-white bg-gradient-to-tr from-[#0a578a] to-[#0a578a6e] mx-2  transition-all duration-300 ease-out;
 }
+
+.basic-button:hover{
+  @apply to-[#0a578a9a];
+}
+
+/* Paragraph Container, Paragraph Card */
+
+.paragraph-container {
+  @apply mx-auto px-5 py-2 w-6xl;
+}
+
+.paragraph-card {
+  @apply flex flex-col text-black mx-1;
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+  
+  .basic-button {
+    @apply text-sm;
+  }
+  .article-heading {
+    @apply text-2xl;
+  }
+  .paragraph-container{
+    @apply w-lvw;
+  }
+}
+
 
 /* Site header, header logo, nav container, nav buttons, corresponding media query for mobile formatting */
 
 .site-header {
-  @apply top-0 right-0 left-0 sticky flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e];
+  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e];
 }
 
 .header-logo {
@@ -47,7 +82,7 @@
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-3 py-0.5 rounded-2xl border-[#ffffff00] border-2 text-white text-lg font-light transition-all duration-500 ease-out;
+  @apply mx-auto my-auto px-3 py-0.5 rounded-full border-[#ffffff00] border-2 text-white text-lg font-light transition-all duration-500 ease-out;
 }
 
 .nav-button:hover {
@@ -82,7 +117,7 @@ and (max-width : 480px) {
 /* Intro Banner Section, Media Container, Info Card Styles, Mobile Media Query */
 
 .banner-section {
-  @apply w-full;
+  @apply w-full mb-4;
 }
 
 .sermon-media-section {
@@ -91,27 +126,27 @@ and (max-width : 480px) {
 
 /* Media container for video/image */
 .sermon-media-embed {
-  @apply bg-gray-100 relative overflow-hidden mb-6 saturate-75 w-full;
+  @apply bg-gray-100 relative overflow-hidden mb-6 saturate-100 w-full;
 }
 
 /* Sermon info card - no background as requested */
 .sermon-info-card {
-  @apply w-full absolute z-10;
+  @apply w-full z-10 absolute inset-0 mt-80;
 }
 
 @media only screen 
 and (min-width : 320px) 
 and (max-width : 480px) {
-.sermon-media-embed {
-  @apply h-80 object-cover object-left;
-}
+  .sermon-media-embed {
+    @apply h-80 object-cover object-left;
+  }
 
-.sermon-info-card {
-  @apply w-full mb-20;
-}
-.heading {
-  @apply text-3xl mx-auto;
-}
+  .sermon-info-card {
+    @apply w-full mb-20 mt-50;
+  }
+  .heading {
+    @apply text-3xl;
+  }
 
 }
 /* Light/Dark Theme Settings (Likely will always be light) */
