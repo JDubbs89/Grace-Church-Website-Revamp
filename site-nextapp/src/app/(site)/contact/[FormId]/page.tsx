@@ -4,10 +4,10 @@ import SermonHeaderCard from "@components/cards/sermon_header_card";
 import ParagraphCard from "@components/cards/paragraph_card";
 
 export const metadata = {
-  title: "Ministry | Ministries",
+  title: "Form | Contact",
 }
 
-export default function Ministry() {
+export default function Form() {
   return (
     <div className="overflow-x-hidden">
       <BannerSection children=

@@ -15,12 +15,12 @@
 /* Generic Paragraph, Heading, Button and Info Styles, Mobile Media Query (?) */
 
 .heading {
-  @apply text-6xl mb-4 mx-auto text-center font-light text-shadow-lg w-min whitespace-nowrap;
+  @apply text-[clamp(1.5rem,5vw,3.75rem)] mb-4 mx-auto text-center font-light text-shadow-lg w-min whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .article-heading {
-  @apply text-5xl mb-4 mx-auto font-light text-center w-min whitespace-nowrap;
+  @apply text-[clamp(1.5rem,5vw,3rem)] mb-4 mx-auto font-light text-center w-min whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .basic-button {
-  @apply rounded-full px-4 py-2 font-light text-white bg-gradient-to-tr from-[#0a578a] to-[#0a578a6e] mx-2  transition-all duration-300 ease-out;
+  @apply rounded-full px-4 py-2 font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] bg-gradient-to-tr from-[#0a578a] to-[#0a578a6e] mx-2  transition-all duration-300 ease-out;
 }
 
 .basic-button:hover{
@@ -48,7 +48,7 @@
 }
 
 @media only screen 
-and (min-width : 320px) 
+and (min-width : 100px) 
 and (max-width : 480px) {
   
   .basic-button {
@@ -66,7 +66,8 @@ and (max-width : 480px) {
 /* Site header, header logo, nav container, nav buttons, corresponding media query for mobile formatting */
 
 .site-header {
-  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e];
+  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e] transition-all duration-300;
+  background: linear-gradient(to bottom, #0a578a, rgba(10, 87, 138, var(--end-opacity)));
 }
 
 .header-logo {
@@ -82,7 +83,7 @@ and (max-width : 480px) {
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-3 py-0.5 rounded-full border-[#ffffff00] border-2 text-white text-lg font-light transition-all duration-500 ease-out;
+  @apply mx-auto my-auto px-3 py-0.5 rounded-full backdrop-blur-xs border-[#ffffff05] border-2 text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
 }
 
 .nav-button:hover {
@@ -94,8 +95,12 @@ and (max-width : 480px) {
 }
 
 @media only screen 
-and (min-width : 320px) 
+and (min-width : 100px) 
 and (max-width : 480px) {
+  
+  .header-logo {
+    @apply w-[170] h-[50] ml-6;
+  }
   .site-header {
     @apply justify-around;
   }
@@ -109,7 +114,7 @@ and (max-width : 480px) {
   }
 
   .hamburger-nav {
-    @apply opacity-100 w-fit m-auto invert-100 pointer-events-none;
+    @apply opacity-100 w-fit mr-6 my-auto invert-100 pointer-events-none;
   }
 }
 
@@ -131,11 +136,11 @@ and (max-width : 480px) {
 
 /* Sermon info card - no background as requested */
 .sermon-info-card {
-  @apply w-full z-10 absolute inset-0 mt-80;
+  @apply w-full z-10 absolute inset-0 mt-[clamp(3rem,12vw,18rem)];
 }
 
 @media only screen 
-and (min-width : 320px) 
+and (min-width : 100px) 
 and (max-width : 480px) {
   .sermon-media-embed {
     @apply h-80 object-cover object-left;
