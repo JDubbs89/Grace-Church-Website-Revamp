@@ -1,7 +1,7 @@
 import BannerSection from "@components/sections/banner_section";
 import MediaContainer from "@components/containers/media_container";
 import SermonHeaderCard from "@components/cards/sermon_header_card";
-import ParagraphCard, { ParagraphCardProps } from "@components/cards/paragraph_card";
+import ParagraphCard from "@components/cards/paragraph_card";
 
 export const metadata = {
   title: "Home",

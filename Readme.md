@@ -5,6 +5,8 @@
   Grace Church is one of the oldest Baptist churches in Michigan - over 100 years old! That said, the current website at the time of writing this is quite outdated (not 100 years outdated, but certainly not modern either.)
   This project is made to give the church's site a little bit of a facelift - Next.js allows for easy front and backend functionality while making the site look great.
 
+![image](https://github.com/JDubbs9/Grace-Church-Website-Revamp/gallery/homepage.png)
+
 ## Mission Statement
   Grace Church Exists to Glorify God by Upholding the Gospel, Making Disciples, Serving Others, and Providing Community.
 
