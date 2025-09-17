@@ -8,17 +8,27 @@ export type IconButtonProps = {
     text: boolean;
     height: number;
     width: number;
+    styles: string;
+    onClick: Function;
+    link: boolean;
 }
 
 export default function IconButton(
-    { name, href, src, text, height, width }: IconButtonProps
+    { name, href, src, text, height, width, styles, onClick, link }: IconButtonProps
 ){
     return(
-        <Link href={href} className="icon-button">
+        (link ? <Link href={href} className={`icon-button ${styles}`} onClick={onClick()}>
             <p className={`${text ? "icon-button-text" : ""}`}>
                 {name}
             </p>
             <Image src={src} height={height} width={width} alt={name}/>
-        </Link>
+        </Link> 
+        : 
+        <button className={`icon-button ${styles}`} onClick={() => {onClick()}}>
+            <p className={`${text ? "icon-button-text" : ""}`}>
+                {name}
+            </p>
+            <Image src={src} height={height} width={width} alt={name}/>
+        </button>)
     )
 }

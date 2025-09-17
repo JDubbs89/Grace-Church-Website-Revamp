@@ -8,7 +8,7 @@ export type NavButtonProps = {
 }
 
 export default function NavButton(
-    { name, href }: NavButtonProps
+    { name, href}: NavButtonProps
 ){
     const pathName = usePathname();
     return(

@@ -23,10 +23,9 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${inter.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <div className={`${inter.variable} ${inter.variable} antialiased`}>
+      {children}
+    </div>
+
   );
 }

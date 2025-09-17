@@ -5,17 +5,24 @@
   --foreground: #171717;
 }
 
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-inter);
+  --bg-color: var(#0a578a6e);
 }
 
 /* Generic Paragraph, Heading, Button and Info Styles, Mobile Media Query (?) */
 
 .heading {
-  @apply text-[clamp(1.5rem,5vw,3.75rem)] mb-4 mx-auto text-center font-light text-shadow-lg w-min whitespace-nowrap;
+  @apply text-[clamp(1.5rem,5vw,3.75rem)] mb-4 mx-auto text-center font-light text-shadow-lg w-auto whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -25,22 +32,22 @@
 }
 
 .paragraph {
-  @apply font-light p-2 whitespace-pre-wrap text-left text-2xl;
+  @apply font-light p-2 whitespace-pre-wrap text-left text-black text-[clamp(0.3rem,2vw,1.15rem)];
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .basic-button {
-  @apply rounded-full px-4 py-2 font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] bg-gradient-to-tr from-[#0a578a] to-[#0a578a6e] mx-2  transition-all duration-300 ease-out;
+  @apply rounded-full px-4 py-2 font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] bg-gradient-to-tr from-[#0a578a] to-[#6389a7] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
 }
 
 .basic-button:hover{
-  @apply to-[#0a578a9a];
+  @apply bg-[#0a578af5];
 }
 
 /* Paragraph Container, Paragraph Card */
 
 .paragraph-container {
-  @apply mx-auto px-5 py-2 w-6xl;
+  @apply mx-auto px-5 py-2 w-[clamp(10rem,72vw,128rem)];
 }
 
 .paragraph-card {
@@ -49,13 +56,22 @@
 
 @media only screen 
 and (min-width : 100px) 
-and (max-width : 480px) {
+and (max-width : 680px) {
   
+  .paragraph {
+    @apply text-[clamp(1rem,2vw,1.15rem)];
+  }
+
   .basic-button {
     @apply text-sm;
   }
+
+  .heading {
+    @apply text-[clamp(1.75rem,4vw,3rem)] wrap-break-word whitespace-pre-wrap;
+  }
+
   .article-heading {
-    @apply text-2xl;
+    @apply whitespace-pre-wrap;
   }
   .paragraph-container{
     @apply w-lvw;
@@ -66,7 +82,7 @@ and (max-width : 480px) {
 /* Site header, header logo, nav container, nav buttons, corresponding media query for mobile formatting */
 
 .site-header {
-  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e] transition-all duration-300;
+  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e] bg-blend-color transition-all duration-300;
   background: linear-gradient(to bottom, #0a578a, rgba(10, 87, 138, var(--end-opacity)));
 }
 
@@ -83,39 +99,44 @@ and (max-width : 480px) {
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-3 py-0.5 rounded-full backdrop-blur-xs border-[#ffffff05] border-2 text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
+  @apply mx-auto my-auto px-3 py-0.5 rounded-full backdrop-blur-xs border-[#ffffff05] border-1  text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
 }
 
 .nav-button:hover {
-  @apply bg-linear-0 bg-[#094c79dc];
+  @apply  border-amber-50;
 }
 
 .nav-button-active {
   @apply border-[#ffffff49];
 }
 
+
 @media only screen 
 and (min-width : 100px) 
-and (max-width : 480px) {
+and (max-width : 680px) {
   
   .header-logo {
-    @apply w-[170] h-[50] ml-6;
+    @apply w-[170] h-[50] mx-auto mt-4 mb-0;
   }
   .site-header {
-    @apply justify-around;
+    @apply justify-around z-12 flex-col;
   }
 
   .header-nav-container {
-    @apply opacity-0 flex-col justify-start gap-0 px-1 absolute right-0 top-0 bottom-0 w-min h-screen m-0 bg-[#0a578a] shadow-black shadow-lg;
+    @apply justify-center gap-[clamp(0.01rem,0.5vw,1.5rem)] mt-3 mb-3 px-2 w-min mx-auto bg-[#0a578a00] transition-all duration-300 z-10;
   }
 
   .nav-button {
-    @apply mt-2 my-0 py-2 mx-auto w-fit text-xl;
+    @apply py-1 px-[clamp(0.3rem,2vw,1.5rem)] w-fit text-[clamp(0.8rem,4vw,1rem)] z-10;
   }
 
   .hamburger-nav {
-    @apply opacity-100 w-fit mr-6 my-auto invert-100 pointer-events-none;
+    @apply opacity-100 w-fit mr-6 my-auto invert-100 transition-all duration-300 z-10;
   }
+  .hamburger-nav:hover {
+    @apply invert-80;
+  }
+
 }
 
 
@@ -129,31 +150,74 @@ and (max-width : 480px) {
   @apply w-full max-w-4xl mx-auto;
 }
 
-/* Media container for video/image */
 .sermon-media-embed {
   @apply bg-gray-100 relative overflow-hidden mb-6 saturate-100 w-full;
 }
 
-/* Sermon info card - no background as requested */
 .sermon-info-card {
   @apply w-full z-10 absolute inset-0 mt-[clamp(3rem,12vw,18rem)];
 }
 
 @media only screen 
 and (min-width : 100px) 
-and (max-width : 480px) {
+and (max-width : 680px) {
   .sermon-media-embed {
-    @apply h-80 object-cover object-left;
+    @apply h-100 object-cover object-left;
   }
 
   .sermon-info-card {
-    @apply w-full mb-20 mt-50;
-  }
-  .heading {
-    @apply text-3xl;
+    @apply w-full mb-20 mt-60;
   }
 
 }
+
+/* Directional Button Styles */
+
+.directional-button {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all duration-200 flex items-center justify-center;
+}
+
+.directional-button-left {
+  @apply left-4;
+}
+
+.directional-button-right {
+  @apply right-4;
+}
+
+
+/* Media Carousel Styles */
+
+.media-carousel-section {
+  @apply relative w-[clamp(1.8rem,96vh,180rem)] h-[clamp(.9rem,48vh,90rem)] mx-auto rounded-2xl overflow-hidden;
+}
+
+.media-carousel-container {
+  @apply flex transition-transform duration-500 ease-in-out w-full h-full;
+}
+
+.media-carousel-slide {
+  @apply flex-shrink-0 w-full h-full;
+}
+
+@media only screen 
+and (min-width : 100px) 
+and (max-width : 680px) {
+  .media-carousel-section{
+    @apply w-[clamp(1.8rem,36vh,180rem)] h-[clamp(.9rem,18vh,90rem)];
+  }
+  
+  .directional-button-left {
+  @apply left-0 scale-50 -translate-x-2;
+}
+
+.directional-button-right {
+  @apply right-0 scale-50 translate-x-2;
+}
+  
+}
+
+
 /* Light/Dark Theme Settings (Likely will always be light) */
 
 @media (prefers-color-scheme: light) {
@@ -168,4 +232,6 @@ and (max-width : 480px) {
 body {
   @apply bg-[var(--background)] text-[var(--foreground)] overflow-x-hidden;
   font-family: Inter, Arial, Helvetica, sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

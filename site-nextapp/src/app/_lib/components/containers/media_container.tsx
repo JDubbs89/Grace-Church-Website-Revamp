@@ -8,7 +8,7 @@ type MediaContainerProps = {
   children: React.ReactNode;
 };
 
-export default function MediaContainer(
+export default function MediaCont(
   { src, alt, className, children }: MediaContainerProps
 ){
   const width = 1920;

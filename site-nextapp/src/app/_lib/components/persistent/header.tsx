@@ -1,11 +1,28 @@
 "use client"
 import Image from "next/image";
 import NavContainer from "@components/containers/nav_container";
+import HamburgerButton from "@components/buttons/hamburger_button";
 import { useState, useEffect } from "react";
 
 export default function SiteHeader(){
     const [isScrolled, setIsScrolled] = useState(false);
     const [isScrolledFar, setIsScrolledFar] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [collapsedMM, setCollapsedMM] = useState(false);
+    useEffect(() => {
+        setCollapsedMM(false);
+    },[]);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 480);
+        }
+        handleResize();
+        if (isMobile){
+            setCollapsedMM(true);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -15,7 +32,7 @@ export default function SiteHeader(){
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-    
+
     let width = 220;
     let height = 80;
     const navLinks = [
@@ -27,10 +44,9 @@ export default function SiteHeader(){
 
     ];
     return(
-        <header className={`site-header`} style={{background: `linear-gradient(to bottom, #0a578a, rgba(10, 87, 138, ${isScrolled ? (isScrolledFar ? 1 : 0.43) : 0.004}))`, transition: 'background 200ms ease'}}>
+        <header className={`site-header`} style={{background: `rgba(10, 87, 138, ${isScrolled ? (isScrolledFar ? 1 : 0.43) : 0.004})`, transition: 'background 200ms ease'}}>
             <Image className="header-logo" src="/img/logo.png" width={width} height={height} alt="Grace Church"/>
-            <div className="hamburger-nav"><Image src="/img/menu-white.svg" width={40} height={40} alt="Mobile Menu"/></div>
-            <NavContainer links={navLinks}/>
+            <NavContainer links={navLinks} collapsed={collapsedMM} isMobile={isMobile} isScrolled={isScrolledFar} isScrolledFar={isScrolledFar}/>
         </header>
     );
 }
