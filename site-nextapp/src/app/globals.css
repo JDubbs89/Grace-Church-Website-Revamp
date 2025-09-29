@@ -19,6 +19,44 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   --bg-color: var(#0a578a6e);
 }
 
+/* Sections */
+
+.section-center {
+  @apply mx-[20%] h-[90%];
+}
+
+.section-full {
+  @apply mx-0 h-[90%];
+}
+
+/* Containers */
+
+.container-flexrow {
+  @apply flex flex-row flex-wrap p-2;
+}
+
+.container-flexcol {
+  @apply flex flex-col flex-wrap p-2;
+}
+
+.container-2x1 {
+  @apply grid grid-cols-2 grid-rows-1 p-2;
+}
+
+.container-grid-1x2 {
+  @apply grid grid-cols-1 grid-rows-2 p-2;
+}
+
+/* Cards */
+
+/* Widgets */
+
+/* Interactibles */
+
+/* Text */
+
+
+/* LEGACY STYLES - BEING SUPERCEDED BY NEW STYLES */
 /* Generic Paragraph, Heading, Button and Info Styles, Mobile Media Query (?) */
 
 .heading {
