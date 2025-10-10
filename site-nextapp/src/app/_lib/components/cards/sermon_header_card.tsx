@@ -1,4 +1,4 @@
-import BasicButton, { BasicButtonProps } from "@components/buttons/basic_button";
+import BasicButton from "@components/buttons/basic_button";
 
 export default function SermonHeaderCard(){
   return (

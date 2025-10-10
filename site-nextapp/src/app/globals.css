@@ -79,7 +79,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .basic-button:hover{
-  @apply bg-[#0a578af5];
+  @apply bg-[#0a578a];
 }
 
 /* Paragraph Container, Paragraph Card */
@@ -137,7 +137,7 @@ and (max-width : 680px) {
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-3 py-0.5 rounded-full backdrop-blur-xs border-[#ffffff05] border-1  text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
+  @apply mx-auto my-auto px-3 py-0.5 rounded-full border-[#ffffff00] border-1  text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
 }
 
 .nav-button:hover {
@@ -145,7 +145,7 @@ and (max-width : 680px) {
 }
 
 .nav-button-active {
-  @apply border-[#ffffff49];
+  @apply border-[#ffffff55];
 }
 
 

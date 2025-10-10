@@ -5,7 +5,7 @@ export type BasicButtonProps = {
     href: string;
 }
 
-export default function NavButton(
+export default function BasicButton(
     { name, href }: BasicButtonProps
 ){
     return(
