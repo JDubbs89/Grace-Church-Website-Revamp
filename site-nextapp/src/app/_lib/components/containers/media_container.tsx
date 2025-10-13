@@ -11,11 +11,11 @@ type MediaContainerProps = {
 export default function MediaCont(
   { src, alt, className, children }: MediaContainerProps
 ){
-  const width = 1920;
-  const height = 1080;
+  const width = 4000;
+  const height = 2250;
   return (
     <div className="relative w-full h-full justify-center">
-      <Image className={className} width={width} height={height} src={src} alt={alt}/>
+       <img className={className} width={width} height={height}  alt={alt}/> {/* src={src} */}
       {children}
     </div>
   )

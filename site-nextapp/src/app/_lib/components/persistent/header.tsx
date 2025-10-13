@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import NavContainer from "@components/containers/nav_container";
-import HamburgerButton from "@components/buttons/hamburger_button";
+//import HamburgerButton from "@components/buttons/hamburger_button";
 import { useState, useEffect } from "react";
 
 export default function SiteHeader(){

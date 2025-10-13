@@ -8,7 +8,7 @@ export default function SermonHeaderCard(){
       </p>
       <div className="flex flex-row mx-auto justify-center">
         <BasicButton name="This Week's Sermon" href=""/>
-        <BasicButton name="All Sermons" href=""/>
+        <BasicButton name="View All Sermons" href=""/>
       </div>
     </div>
   );
