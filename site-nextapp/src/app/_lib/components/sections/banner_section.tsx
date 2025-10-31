@@ -1,3 +1,4 @@
+import Overlay from "./overlay";
 
 export default function BannerSection({
   children,
@@ -5,8 +6,8 @@ export default function BannerSection({
   children: React.ReactNode;
 }>){
   return (
-    <div className="banner-section">
+    <Overlay className="w-full mt-0 mx-0">
       {children}
-    </div>
+    </Overlay>
   )
 }

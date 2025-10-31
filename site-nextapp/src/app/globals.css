@@ -55,7 +55,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .container-2x1 {
-  @apply grid grid-cols-2 grid-rows-1 p-2;
+  @apply grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1;
 }
 
 .container-grid-1x2 {
@@ -96,12 +96,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 /* Generic Paragraph, Heading, Button and Info Styles, Mobile Media Query (?) */
 
 .heading {
-  @apply text-[clamp(1.5rem,5vw,3.75rem)] mb-4 mx-auto text-center font-light text-shadow-lg w-auto whitespace-nowrap;
+  @apply text-[2rem] md:text-[3.75rem] mb-4 mx-auto text-center font-semibold text-shadow-lg w-auto whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .article-heading {
-  @apply text-[clamp(1.5rem,5vw,3rem)] mb-4 mx-auto font-light text-center w-min whitespace-nowrap;
+  @apply  text-[3rem] md:text-[5rem] font-bold mx-auto text-center w-min whitespace-nowrap;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -111,11 +111,19 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .basic-button {
-  @apply rounded-full px-4 py-2 font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] text-shadow-lg bg-gradient-to-r from-[#638aa730] to-[#638aa730] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
+  @apply rounded-full px-4 py-2 w-fit font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] text-shadow-lg backdrop-blur-xs bg-gradient-to-b from-[#2e709650] to-[#2e7096be] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
 }
 
 .basic-button:hover{
-  @apply bg-[#0a518a];
+  @apply bg-[#e5ebff] text-[#0A5789] scale-101 ease-in-out;
+}
+
+.basic-button-dark {
+  @apply rounded-full px-4 py-2 w-fit font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] text-shadow-lg bg-gradient-to-r from-[#00000080] to-[#00000080] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
+}
+
+.basic-button-dark:hover{
+  @apply bg-[#0A5789];
 }
 
 /* Paragraph Container, Paragraph Card */
@@ -130,6 +138,13 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 @media only screen 
 and (min-width : 100px) 
+and (max-width : 1400px) {
+  .container-2x1 {
+    @apply grid-cols-1;
+  }
+}
+@media only screen 
+and (min-width : 100px) 
 and (max-width : 680px) {
   
   .paragraph {
@@ -141,7 +156,7 @@ and (max-width : 680px) {
   }
 
   .heading {
-    @apply text-[clamp(1.75rem,4vw,3rem)] wrap-break-word whitespace-pre-wrap;
+    @apply wrap-break-word whitespace-pre-wrap;
   }
 
   .article-heading {
@@ -217,7 +232,7 @@ and (max-width : 680px) {
 /* Intro Banner Section, Media Container, Info Card Styles, Mobile Media Query */
 
 .banner-section {
-  @apply w-full mb-4;
+  @apply w-full;
 }
 
 .sermon-media-section {
@@ -225,12 +240,12 @@ and (max-width : 680px) {
 }
 
 .sermon-media-embed {
-  @apply bg-gray-100 relative overflow-hidden mb-6 saturate-100 w-full;
+  @apply absolute saturate-100 inset-0 w-full h-[80vh] object-cover;
   content:url("/img/grace-front-1.png");
 }
 
 .sermon-info-card {
-  @apply w-full z-10 absolute inset-0 mt-[clamp(40vh,40vh,20vh)];
+  @apply w-full z-10 inset-0 my-auto;
 }
 
 @media only screen 
@@ -244,7 +259,7 @@ and (max-width : 1500px) {
 @media only screen 
 and (max-width : 1200px) {
   .sermon-media-embed {
-    @apply h-100 object-cover object-left;
+    @apply h-[80vh] object-cover object-left-bottom;
     content:url("/img/grace-front-2.png");
   }
 }

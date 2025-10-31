@@ -2,7 +2,7 @@ import BasicButton from "@components/buttons/basic_button";
 
 export default function SermonHeaderCard(){
   return (
-    <div className="sermon-info-card z-10">
+    <div className="sermon-info-card z-10 top-24">
       <p className="heading text-white">
         Experience Life at Grace.
       </p>
