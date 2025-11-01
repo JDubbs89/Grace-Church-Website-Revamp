@@ -20,9 +20,9 @@ export default function QuickActionSection({
     return(
         <section className="section-full">
             <div className="flex flex-col justify-center">
-                <div className="mx-auto my-15 max-w-[35vw]">
+                <div className="pt-15 justify-center bg-[#dfdfdf4b]">
                     <h1 className="text-[3rem] font-semibold text-[#2e2e2e] text-center">Do you ripple?</h1>
-                    <p className="paragraph-center text-[#2e2e2e]">Here at Grace, we're dedicated to providing community for those in need. That could include you, or maybe you have the ability to help.</p>
+                    <p className="paragraph-center max-w-[35vw] text-[#2e2e2e] mb-15 mx-auto">Here at Grace, we're dedicated to providing community for those in need. That could include you, or maybe you have the ability to help.</p>
                 </div>
             <div className="flex flex-wrap justify-center gap-2 py-2 mb-20">
                 {props.actions.map((action, index)=>(

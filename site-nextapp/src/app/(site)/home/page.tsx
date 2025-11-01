@@ -42,7 +42,7 @@ export default function Home() {
           children_2={<img src="/img/hands-raised.png" className="w-full h-full object-cover object-left-bottom"/>}
           fullsize_image={true}
         />
-        <section className="bg-[#dfdfdf4b]"><ParagraphCard heading="Featured" paragraph ="" text_color="#0A5789"/></section>
+        <section className="bg-[#dfdfdf4b] py-10"><ParagraphCard heading="Featured" paragraph ="" text_color="#0A5789"/></section>
         
         <Gallery/>
 

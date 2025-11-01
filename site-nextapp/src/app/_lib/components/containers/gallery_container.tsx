@@ -126,7 +126,7 @@ const Carousel: React.FC<CarouselProps> = ({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="w-full h-[80vh] md:h-[100vh] lg:h-[75vh] flex justify-center items-center">
+      <div className="w-full h-[80vh] md:h-[100vh] lg:h-[85vh] flex justify-center items-center">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}
@@ -136,16 +136,16 @@ const Carousel: React.FC<CarouselProps> = ({
             animate="center"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute w-full h-full flex flex-col lg:flex-row items-center justify-center bg-white"
+            className="absolute w-full h-[70vh] md:h-full flex flex-col lg:flex-row items-center justify-center bg-white"
           >
-            <div className="w-full lg:w-1/2 h-1/2 md:h-full flex items-center justify-center">
+            <div className="lg:flex-2 w-full lg:w-1/2 h-1/2 md:h-1/2 lg:h-full flex items-center justify-center">
               <img
                 src={items[index].image}
                 alt={items[index].title}
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <div className="w-full lg:w-1/2 h-full flex flex-col justify-start p-8 pb-20 md:text-left lg:justify-end bg-gradient-to-br to-[#418ceec2] from-[#044f73] text-white">
+            <div className="flex-1 w-full lg:w-1/2 h-full flex flex-col justify-start p-8 pb-20 md:text-left lg:justify-end bg-gradient-to-br to-[#418ceec2] from-[#044f73] text-white">
               <h2 className="text-[2rem] lg:text-[5rem] font-semibold mb-4">{items[index].title}</h2>
               <p className="text-gray-200 pl-5 text-[1.25rem]">{items[index].description}</p>
               <BasicButton name="View Calendar" href="" className="mt-5 mx-2"/>
