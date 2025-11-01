@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
+html::-webkit-scrollbar, body::-webkit-scrollbar, div::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
@@ -110,11 +110,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .paragraph {
-  @apply font-light p-2 whitespace-pre-wrap text-left text-black text-[clamp(0.3rem,2vw,1.15rem)];
+  @apply font-light p-2 whitespace-pre-wrap text-left text-black text-[1.25rem];
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 .paragraph-center {
-  @apply font-light p-2 whitespace-pre-wrap text-center text-black text-[clamp(0.3rem,2vw,1.15rem)];
+  @apply font-light p-2 whitespace-pre-wrap text-center text-black text-[1.25rem];
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -156,7 +156,7 @@ and (min-width : 100px)
 and (max-width : 680px) {
   
   .paragraph {
-    @apply text-[clamp(1rem,2vw,1.15rem)];
+    @apply text-[1.25rem];
   }
 
   .basic-button {

@@ -136,7 +136,7 @@ const Carousel: React.FC<CarouselProps> = ({
             animate="center"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute w-full h-[70vh] md:h-full flex flex-col lg:flex-row items-center justify-center bg-white"
+            className={`absolute w-full h-full flex flex-col ${index%2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center justify-center bg-white`}
           >
             <div className="lg:flex-2 w-full lg:w-1/2 h-1/2 md:h-1/2 lg:h-full flex items-center justify-center">
               <img

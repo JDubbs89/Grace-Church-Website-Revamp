@@ -50,6 +50,7 @@ export default function Home() {
           {title:"Community Groups", description:"Get plugged into a community group.", url:"", image:"https://picsum.photos/800/600?2"},
           {title:"Event Calendar", description:"Learn more about our upcoming events", url:"", image:"https://picsum.photos/800/600?3"},
           {title:"Contact Us", description:"Get in touch with someone who has answers for your questions.", url:"", image:"https://picsum.photos/800/600?4"},
+          {title:"Get Involved", description:"You have the power to glorify God by serving in ministry.", url:"", image:"https://picsum.photos/800/600?5"},
           {title:"Get Involved", description:"You have the power to glorify God by serving in ministry.", url:"", image:"https://picsum.photos/800/600?5"}
           ], className:""}}/>
         {/* <HeroSection children_1={(<div>Hello World</div>)} children_2={(<div>Hello World</div>)}/> */}
