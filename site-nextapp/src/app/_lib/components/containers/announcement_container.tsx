@@ -11,8 +11,8 @@ export default function Gallery() {
   },
   {
     image: "/img/grace-kids-promo.png",
-    title: "Second Slide",
-    description: "Here’s another example with different content.",
+    title: "Grace Kids",
+    description: "Sunday service, K-6th",
   },
   {
     image: "/img/equipment.jpg",

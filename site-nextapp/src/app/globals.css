@@ -62,6 +62,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   @apply grid grid-cols-1 grid-rows-2 p-2;
 }
 
+.container-grid-1x4 {
+  @apply grid grid-cols-1 grid-rows-4 lg:grid-cols-4 lg:grid-rows-1;
+}
+
 /* Cards */
 
 .carousel-element {
@@ -109,9 +113,13 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   @apply font-light p-2 whitespace-pre-wrap text-left text-black text-[clamp(0.3rem,2vw,1.15rem)];
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
+.paragraph-center {
+  @apply font-light p-2 whitespace-pre-wrap text-center text-black text-[clamp(0.3rem,2vw,1.15rem)];
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
 
 .basic-button {
-  @apply rounded-full px-4 py-2 w-fit font-light text-white text-[clamp(0.1rem,1.5vw,1rem)] text-shadow-lg backdrop-blur-xs bg-gradient-to-b from-[#2e709650] to-[#2e7096be] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
+  @apply rounded-full px-4 py-2 w-fit font-light text-white text-[1rem] text-shadow-lg backdrop-blur-xs bg-gradient-to-b to-[#0A5789] from-[#0a496b5b] bg-blend-color mx-2  transition-all duration-300 ease-in-out;
 }
 
 .basic-button:hover{
@@ -152,7 +160,7 @@ and (max-width : 680px) {
   }
 
   .basic-button {
-    @apply text-sm from-[#638aa799] to-[#638aa750];
+    @apply from-[#638aa799] to-[#638aa750];
   }
 
   .heading {
@@ -171,7 +179,7 @@ and (max-width : 680px) {
 /* Site header, header logo, nav container, nav buttons, corresponding media query for mobile formatting */
 
 .site-header {
-  @apply top-0 right-0 left-0 fixed flex flex-row justify-center cursor-pointer z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e] bg-blend-color transition-all duration-300;
+  @apply top-0 right-0 left-0 fixed flex flex-row justify-center z-50 bg-gradient-to-b from-[#0a578a] to-[#0a578a6e] bg-blend-color transition-all duration-300;
   background: linear-gradient(to bottom, #0a578a, rgba(10, 87, 138, var(--end-opacity)));
 }
 
@@ -188,7 +196,7 @@ and (max-width : 680px) {
 }
 
 .nav-button {
-  @apply mx-auto my-auto px-3 py-1 rounded-full border-[#ffffff00] border-1  text-white text-lg text-[clamp(0.1rem,1.5vw,1.05rem)] font-light transition-all duration-500 ease-out;
+  @apply mx-auto my-auto px-3 py-1 rounded-full text-shadow-lg border-[#ffffff00] border-1  text-white text-[1rem] font-light transition-all duration-500 ease-out;
 }
 
 .nav-button:hover {

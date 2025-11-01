@@ -21,7 +21,7 @@ const Carousel: React.FC<CarouselProps> = ({
   items,
   loop = true,
   autoAdvance = true,
-  autoAdvanceInterval = 8000,
+  autoAdvanceInterval = 30000,
   queueLength = 1,
 }) => {
   const [index, setIndex] = useState(0);
@@ -126,7 +126,7 @@ const Carousel: React.FC<CarouselProps> = ({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="w-full h-[65vh] flex justify-center items-center">
+      <div className="w-full h-[80vh] md:h-[100vh] lg:h-[75vh] flex justify-center items-center">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}
@@ -136,19 +136,19 @@ const Carousel: React.FC<CarouselProps> = ({
             animate="center"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute w-full h-full flex flex-col md:flex-row items-center justify-center bg-white"
+            className="absolute w-full h-full flex flex-col lg:flex-row items-center justify-center bg-white"
           >
-            <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center">
+            <div className="w-full lg:w-1/2 h-1/2 md:h-full flex items-center justify-center">
               <img
                 src={items[index].image}
                 alt={items[index].title}
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-start p-8 md:pb-20 md:text-left md:justify-end bg-gradient-to-br to-[#418ceec2] from-[#044f73] text-white">
-              <h2 className="text-[2rem] md:text-[5rem] font-semibold mb-4">{items[index].title}</h2>
-              <p className="text-gray-200 text-lg">{items[index].description}</p>
-              <BasicButton name="View Calendar" href="" className="mt-5"/>
+            <div className="w-full lg:w-1/2 h-full flex flex-col justify-start p-8 pb-20 md:text-left lg:justify-end bg-gradient-to-br to-[#418ceec2] from-[#044f73] text-white">
+              <h2 className="text-[2rem] lg:text-[5rem] font-semibold mb-4">{items[index].title}</h2>
+              <p className="text-gray-200 pl-5 text-[1.25rem]">{items[index].description}</p>
+              <BasicButton name="View Calendar" href="" className="mt-5 mx-2"/>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -160,7 +160,7 @@ const Carousel: React.FC<CarouselProps> = ({
           handleNavigation(-1);
           resetAutoAdvance();
         }}
-        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white py-2 pr-4.25 pl-3.5 rounded-full opacity-0 group-hover:opacity-100 transition"
+        className="hidden md:flex cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white py-2 pr-4.25 pl-3.5 rounded-full opacity-0 group-hover:opacity-100 transition"
       >
         ❮
       </button>
@@ -169,7 +169,7 @@ const Carousel: React.FC<CarouselProps> = ({
           handleNavigation(1);
           resetAutoAdvance();
         }}
-        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white py-2 pl-4 pr-3.75 rounded-full opacity-0 group-hover:opacity-100 transition"
+        className="hidden md:flex cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white py-2 pl-4 pr-3.75 rounded-full opacity-0 group-hover:opacity-100 transition"
       >
         ❯
       </button>
@@ -181,7 +181,7 @@ const Carousel: React.FC<CarouselProps> = ({
             onClick={() => {
               if (i !== index) setIndex(i);
             }}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-400 ${
+            className={`w-2.5 h-2.5 cursor-pointer rounded-full transition-all duration-400 ${
               i === index ? "bg-white scale-115" : "bg-[#9c9c9cb0] hover:bg-gray-200 scale-95 hover:scale-110"
             }`}
           />
