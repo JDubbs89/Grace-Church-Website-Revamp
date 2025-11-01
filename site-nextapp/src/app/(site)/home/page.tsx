@@ -10,6 +10,7 @@ import Gallery from "@components/containers/announcement_container";
 import BasicButton from "@components/buttons/basic_button";
 import Overlay from "@components/sections/overlay";
 import QuickActionSection from "@/app/_lib/components/sections/quick_action_section";
+import AppBannerSection from "@components/sections/app_section";
 
 export const metadata:Metadata = {
   title: "Home",
@@ -50,10 +51,16 @@ export default function Home() {
           {title:"Community Groups", description:"Get plugged into a community group.", url:"", image:"https://picsum.photos/800/600?2"},
           {title:"Event Calendar", description:"Learn more about our upcoming events", url:"", image:"https://picsum.photos/800/600?3"},
           {title:"Contact Us", description:"Get in touch with someone who has answers for your questions.", url:"", image:"https://picsum.photos/800/600?4"},
-          {title:"Get Involved", description:"You have the power to glorify God by serving in ministry.", url:"", image:"https://picsum.photos/800/600?5"},
           {title:"Get Involved", description:"You have the power to glorify God by serving in ministry.", url:"", image:"https://picsum.photos/800/600?5"}
           ], className:""}}/>
         {/* <HeroSection children_1={(<div>Hello World</div>)} children_2={(<div>Hello World</div>)}/> */}
+        <AppBannerSection
+          title="Stay in Touch with Us"
+          description="Download the Grace Church app and watch messages, follow church events, and connect with your community group — all from your phone."
+          imageSrc="/img/appScreenshot.png"
+          androidUrl="https://play.google.com/store/apps/details?id=com.biggmaze"
+          iosUrl="https://apps.apple.com/app/id1234567890"
+        />
       </div>
     );
 }
