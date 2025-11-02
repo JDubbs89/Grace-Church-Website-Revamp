@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Inter} from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@components/persistent/header";
+import Link from "next/link"
 import Footer from "@components/persistent/footer";
 
 const montserrat = Montserrat({
@@ -46,12 +47,12 @@ export default function RootLayout({
           <div className="flex flex-col mr-auto ml-60 h-fit p-4 my-auto">
             <div>Navigation</div>
             <ol className="px-2 py-1 text-gray-200">
-              <li><a className="hover:" href="/home">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/ministries">Ministries</a></li>
-              <li><a href="/media">Media</a></li>
-              <li><a href="unifiedgiving.com/give/index/30">Giving</a></li>
-              <a>Contact</a>
+              <li><Link className="hover:" href="/home">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/ministries">Ministries</Link></li>
+              <li><Link href="/media">Media</Link></li>
+              <li><Link href="unifiedgiving.com/give/index/30">Giving</Link></li>
+              <Link href="">Contact</Link>
             </ol>
           </div>
         </Footer>

@@ -1,27 +1,23 @@
+import type { Metadata } from "next";
 import BannerSection from "@components/sections/banner_section";
 import MediaCont from "@components/containers/media_container";
-import MediaCarousel from "@components/sections/mediaCarousel/mediaCarousel";
-import MediaContainer from "@components/sections/mediaCarousel/mediaContainer";
 import SermonHeaderCard from "@components/cards/sermon_header_card";
 import ParagraphCard from "@components/cards/paragraph_card";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Beliefs | About",
 }
 
 export default function Beliefs() {
   return (
     <div className="overflow-x-hidden">
-      <BannerSection children=
-        {[
-          // This media container renders the site image banner and takes in children so we can reuse this component later.
+      <BannerSection>
         <MediaCont className="sermon-media-embed z-0 object-cover" key="Media" src="/img/grace-front.png" alt="Intro Visual" 
           children=
           {[
             <SermonHeaderCard key="Header"/>
           ]}/>
-        ]}
-      />
+      </BannerSection>
       <section className="paragraph-container">
         
         <ParagraphCard heading="Welcome!" paragraph ="      Grace Church exists to glorify God by upholding the gospel, making disciples, serving others, and providing community. Located in Jackson County, Michigan, we are committed to living out this mission through corporate worship on Sundays and home-based community groups throughout the week that provide discipleship, care, and mission fulfillment."/>

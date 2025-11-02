@@ -33,8 +33,8 @@ export default function SiteHeader(){
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    let width = 220;
-    let height = 80;
+    const width = 220;
+    const height = 80;
     const navLinks = [
         {name: "Home", href: "/home"},
         {name: "About", href: "/about"},
