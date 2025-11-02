@@ -4,6 +4,8 @@ import MediaContainer from "@components/containers/media_container";
 import SermonHeaderCard from "@components/cards/sermon_header_card";
 import ParagraphCard from "@components/cards/paragraph_card";
 
+export const runtime = 'edge'
+
 export const metadata: Metadata = {
   title: "Ministry | Ministries",
 }
