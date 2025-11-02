@@ -19,7 +19,7 @@ export default function Home() {
   return (
       <div className="overflow-x-hidden">
         <Overlay>
-            <img key="img" className="sermon-media-embed" alt=""/>,
+            <img key="img" className="sermon-media-embed" alt="Header"/>,
             <div className="relative w-full h-[80vh] md:h-[80vh] flex items-center justify-center">
               <div className="sermon-info-card z-10 pb-[75%] md:pb-0">
                 <p className="heading text-white">

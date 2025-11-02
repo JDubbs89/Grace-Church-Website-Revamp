@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BasicButton from "../buttons/basic_button";
+import Image from "next/image";
 
 interface CarouselItem {
   image: string;
@@ -139,10 +140,13 @@ const Carousel: React.FC<CarouselProps> = ({
             className={`absolute w-full h-full flex flex-col ${index%2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center justify-center bg-white`}
           >
             <div className="lg:flex-2 w-full lg:w-1/2 h-1/2 md:h-1/2 lg:h-full flex items-center justify-center">
-              <img
+              <Image
                 src={items[index].image}
                 alt={items[index].title}
+                width={1920}
+                height={1080}
                 className="w-full h-full object-cover object-center"
+                unoptimized //TODO: When static images are brough in, disable unoptimized dynamic image fetching
               />
             </div>
             <div className="flex-1 w-full lg:w-1/2 h-full flex flex-col justify-start p-8 pb-20 md:text-left lg:justify-end bg-gradient-to-br to-[#418ceec2] from-[#044f73] text-white">

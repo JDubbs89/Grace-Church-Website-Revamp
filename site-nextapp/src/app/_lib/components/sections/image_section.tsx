@@ -5,7 +5,7 @@ type ImageSectionProps = {
   children: React.ReactNode;
 }
 
-export default function (
+export default function ImageSection(
   { className, src, children }: ImageSectionProps
 ){
   return(
