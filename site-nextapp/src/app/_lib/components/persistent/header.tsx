@@ -40,7 +40,8 @@ export default function SiteHeader(){
         {name: "About", href: "/about"},
         {name: "Ministries", href: "/ministries"},
         {name: "Media", href: "/media"},
-        {name: "Giving", href: "https://www.unifiedgiving.com/give/index/30"}
+        {name: "Giving", href: "https://www.unifiedgiving.com/give/index/30"},
+        {name: "Contact", href: "/contact"}
 
     ];
     return(
