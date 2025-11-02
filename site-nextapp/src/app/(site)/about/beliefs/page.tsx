@@ -12,11 +12,9 @@ export default function Beliefs() {
   return (
     <div className="overflow-x-hidden">
       <BannerSection>
-        <MediaCont className="sermon-media-embed z-0 object-cover" key="Media" src="/img/grace-front.png" alt="Intro Visual" 
-          children=
-          {[
-            <SermonHeaderCard key="Header"/>
-          ]}/>
+        <MediaCont className="sermon-media-embed z-0 object-cover" key="Media" src="/img/grace-front.png" alt="Intro Visual">
+          <SermonHeaderCard key="Header"/>
+        </MediaCont>
       </BannerSection>
       <section className="paragraph-container">
         

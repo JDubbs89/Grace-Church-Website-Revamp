@@ -1,9 +1,8 @@
 import { Metadata } from "next";
-import BannerSection from "@components/sections/banner_section";
-import MediaContainer from "@components/containers/media_container";
-import MediaCarousel from "@components/containers/image_carousel";
-import SermonHeaderCard from "@components/cards/sermon_header_card";
-import CarouselSection from "@components/sections/carousel_section";
+// import BannerSection from "@components/sections/banner_section";
+// import MediaContainer from "@components/containers/media_container";
+// import MediaCarousel from "@components/containers/image_carousel";
+// import SermonHeaderCard from "@components/cards/sermon_header_card";
 import ParagraphCard from "@components/cards/paragraph_card";
 import HeroSection from "@/app/_lib/components/sections/hero_section";
 import Gallery from "@components/containers/announcement_container";

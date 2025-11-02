@@ -12,11 +12,9 @@ export default function Media() {
   return (
     <div className="overflow-x-hidden">
       <BannerSection>
-        <MediaContainer className="sermon-media-embed z-0 object-cover" key="Media" src="/img/grace-front.png" alt="Intro Visual" 
-          children=
-          {[
-            <SermonHeaderCard key="Header"/>
-        ]}/>
+        <MediaContainer className="sermon-media-embed z-0 object-cover" key="Media" src="/img/grace-front.png" alt="Intro Visual">
+          <SermonHeaderCard key="Header"/>
+        </MediaContainer>
       </BannerSection>
       <section className="paragraph-container">
         <ParagraphCard heading="Welcome!" paragraph ="      Grace Church exists to glorify God by upholding the gospel, making disciples, serving others, and providing community. Located in Jackson County, Michigan, we are committed to living out this mission through corporate worship on Sundays and home-based community groups throughout the week that provide discipleship, care, and mission fulfillment."/>

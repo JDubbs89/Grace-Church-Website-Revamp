@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@components/persistent/header";
 import Link from "next/link"
 import Footer from "@components/persistent/footer";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
+// const montserrat = Montserrat({
+//   variable: "--font-montserrat",
+//   subsets: ["latin"],
+// });
 
 const inter = Inter({
   variable: "--font-inter",

@@ -16,7 +16,7 @@ export default function NavContainer(
     return(
         <nav className={`header-nav-container ${(isMobile && collapsed) ? " translate-x-full opacity-0" : ""}`}>
             {links.map((link) => (
-                    <NavButton key={link.name}  name={link.name} href={link.href}/>
+                    <NavButton key={link.name + isScrolled + isScrolledFar}  name={link.name} href={link.href}/>
             ))}
         </nav>
     );

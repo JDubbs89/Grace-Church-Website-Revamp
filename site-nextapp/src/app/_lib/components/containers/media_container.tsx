@@ -15,7 +15,7 @@ export default function MediaCont(
   const height = 2250;
   return (
     <div className="relative w-full h-full justify-center">
-       <img className={className} width={width} height={height}  alt={alt}/> {/* src={src} */}
+       <Image src={src} className={className} width={width} height={height}  alt={alt}/> {/* src={src} */}
       {children}
     </div>
   )
