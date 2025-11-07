@@ -25,7 +25,7 @@ export default function QuickActionSection({
                     <h1 className="text-[3rem] font-semibold text-[#2e2e2e] text-center">Do you ripple?</h1>
                     <p className="paragraph-center md:max-w-[35vw] text-[#2e2e2e] mb-15 mx-auto">Here at Grace, we&apos;re dedicated to providing community for those in need. That could include you, or maybe you have the ability to help.</p>
                 </div>
-            <div className="flex flex-row h-full sm:overflow-x-scroll lg:flex-wrap bg-gradient-to-br to-[#3470bec2] from-[#044f73]">
+            <div className="flex flex-row h-full overflow-x-scroll lg:flex-wrap bg-gradient-to-br to-[#3470bec2] from-[#044f73]">
                 {props.actions.map((action, index)=>(
                     <div key={action.title + index} className="flex flex-col justify-between min-w-[60vw] lg:min-w-[25vw] lg:max-w-[25vw] min-h-0 overflow-clip bg-gradient-to-br to-[#3470bec2] from-[#044f73]">
                         <Image 
